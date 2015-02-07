@@ -28,7 +28,7 @@ public class BluetoothService extends Service
 	public void onCreate()
 	{
 		mAdapter = BluetoothAdapter.getDefaultAdapter();
-		//mTv = mAdapter.getRemoteDevice(address);
+		mTv = mAdapter.getRemoteDevice("F8:8F:CA:22:28:77");
 		serverHandler = new Handler() 
 		{
 	        @Override
