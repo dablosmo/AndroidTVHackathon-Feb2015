@@ -1,4 +1,4 @@
-package com.sdkcdg.cahphone;
+package com.sdkcdg.bluetooth;
 
 import android.app.Service;
 import android.bluetooth.BluetoothAdapter;
@@ -10,9 +10,8 @@ import android.os.Message;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.sdkcdg.bluetooth.BluetoothClient;
-import com.sdkcdg.bluetooth.BluetoothServer;
-import com.sdkcdg.bluetooth.MessageType;
+import com.sdkcdg.cahphone.PlayerUtils;
+import com.sdkcdg.proto.PlayerCommands;
 import com.sdkcdg.proto.PlayerProto.PlayerMessage;
 
 public class BluetoothService extends Service
@@ -92,6 +91,16 @@ public class BluetoothService extends Service
 		int mCommand = msg.getMAction();
 		switch(mCommand)
 		{
+			case PlayerCommands.PLAY_CARD:
+			{
+				PlayerUtils.sendCardToServer();
+				break;
+			}
+			case PlayerCommands.RECEIVE_CARD:
+			{
+				PlayerUtils.addCard(msg);
+				break;
+			}
 			default:
 				break;
 		}
