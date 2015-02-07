@@ -14,8 +14,7 @@ import com.sdkcdg.bluetooth.BluetoothService;
 import com.sdkcdg.proto.PlayerProto.PlayerMessage;
 
 
-public class MainActivity extends Activity 
-{
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) 
