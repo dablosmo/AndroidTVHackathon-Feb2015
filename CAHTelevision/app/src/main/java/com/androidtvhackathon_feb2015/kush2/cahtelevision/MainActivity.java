@@ -16,6 +16,7 @@ package com.androidtvhackathon_feb2015.kush2.cahtelevision;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.TextView;
 
 /*
  * MainActivity class that loads MainFragment
@@ -24,12 +25,13 @@ public class MainActivity extends Activity {
     /**
      * Called when the activity is first created.
      */
+    private TextView startButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        System.out.println("Hello World");
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);
         setContentView(R.layout.menu);
+
     }
 }
