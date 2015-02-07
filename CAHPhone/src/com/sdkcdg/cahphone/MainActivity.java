@@ -9,8 +9,7 @@ import com.example.cahphone.R;
 import com.sdkcdg.bluetooth.BluetoothService;
 
 
-public class MainActivity extends Activity 
-{
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) 
