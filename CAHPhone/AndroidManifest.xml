@@ -7,6 +7,7 @@
     <uses-sdk
         android:minSdkVersion="19"
         android:targetSdkVersion="21" />
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
 
     <application
         android:allowBackup="true"
@@ -22,6 +23,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service
+            android:name="com.sdkcdg.bluetooth.BluetoothService"
+            android:exported="true">
+            <intent-filter >
+                <action android:name="bluetooth_service" />
+            </intent-filter>
+         </service>
     </application>
 
 </manifest>
