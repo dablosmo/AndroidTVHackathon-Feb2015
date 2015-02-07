@@ -1,8 +1,10 @@
 package com.sdkcdg.cahphone;
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
+
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -19,7 +21,17 @@ public class MainActivity extends Activity
     protected void onCreate(Bundle savedInstanceState) 
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.phone_activity);
+        
+        CardsFragment cm = new CardsFragment();
+        
+        FragmentManager fm = getFragmentManager();
+        
+        
+        fm.beginTransaction()
+                .add(R.id.fragmentContainer, cm).commit();
+        
+        
         Toast.makeText(this, "Initializing Connection", Toast.LENGTH_SHORT).show();
 		Intent serviceIntent = new Intent(getApplicationContext(), BluetoothService.class);
 		startService(serviceIntent);

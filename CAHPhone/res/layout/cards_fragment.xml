@@ -18,15 +18,15 @@
         android:layout_marginTop="32dp"
         android:paddingTop="16dp"
         android:paddingBottom="16dp"
-        android:id="@+id/previous"
+        android:id="@+id/last"
         android:text="@string/button_last"/>
 
     <!--<include layout="@layout/phone_white_item"/>-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/previous"
-        android:id="@+id/tv_phone_topic"
+        android:layout_toRightOf="@id/last"
+        android:id="@+id/tv_card"
 
         android:text="@string/answer_card"
         android:textColor="@color/black"

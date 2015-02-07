@@ -44,7 +44,7 @@ public class PlayerUtils
 		selectedCards = null;
 	}
 	
-	public void selectCards(int card)
+	public static void selectCards(int card)
 	{
 		if(selectedCards == null)
 		{
