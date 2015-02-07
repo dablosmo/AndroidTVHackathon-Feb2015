@@ -49,7 +49,13 @@ public class CardsFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				PlayerUtils.selectCards(mCounter);
+				
+				if(mCounter >= 0 && mCounter < PlayerUtils.mHand.size()) {
+					
+					PlayerUtils.selectCards(mCounter);
+					
+				}
+				
 				
 			}
 		});

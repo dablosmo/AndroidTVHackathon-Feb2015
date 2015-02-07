@@ -22,14 +22,17 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.phone_activity);
         
-        CardsFragment cm = new CardsFragment();
+//        CardsFragment cm = new CardsFragment();
         
         FragmentManager fm = getFragmentManager();
         
-        
-        fm.beginTransaction()
-                .add(R.id.fragmentContainer, cm).commit();
-        
+        CardsFragment cm = (CardsFragment) fm.findFragmentById(R.id.fragmentContainer);
+        if(cm == null) {
+        	
+        	fm.beginTransaction()
+            .add(R.id.fragmentContainer, cm).commit();
+        	
+        }
         
         Toast.makeText(this, "Initializing Connection", Toast.LENGTH_SHORT).show();
 		Intent serviceIntent = new Intent(getApplicationContext(), BluetoothService.class);
