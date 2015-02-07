@@ -28,7 +28,7 @@ public class BluetoothService extends Service
 	public void onCreate()
 	{
 		mAdapter = BluetoothAdapter.getDefaultAdapter();
-		//mTv = mAdapter.getRemoteDevice(address);
+		mTv = mAdapter.getRemoteDevice("F8:8F:CA:22:28:77");
 		serverHandler = new Handler() 
 		{
 	        @Override
@@ -84,6 +84,12 @@ public class BluetoothService extends Service
 	    {
 	    	mClient = new BluetoothClient(clientHandler);
 	    }
+	    PlayerMessage msg = PlayerMessage.newBuilder()
+				.setMName("David")
+				.setMAction(1)
+				.build();
+	    System.out.println("Sending Data");
+		BluetoothService.sendMessage(msg);
 	}
 	
 	private void readResponse(PlayerMessage msg)
