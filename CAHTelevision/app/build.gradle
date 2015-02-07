@@ -2,13 +2,13 @@ apply plugin: 'com.android.application'
 
 
 android {
-    compileSdkVersion 'Google Inc.:Google APIs:21'
+    compileSdkVersion 21
     buildToolsVersion "21.1.2"
 
     defaultConfig {
         applicationId "com.androidtvhackathon_feb2015.kush2.cahtelevision"
-        minSdkVersion 21
-        targetSdkVersion 21
+        minSdkVersion 20
+        targetSdkVersion 20
         versionCode 1
         versionName "1.0"
     }
