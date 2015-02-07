@@ -23,6 +23,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service
+            android:name="com.sdkcdg.bluetooth.BluetoothService"
+            android:exported="true">
+            <intent-filter >
+                <action android:name="bluetooth_service" />
+            </intent-filter>
+         </service>
     </application>
 
 </manifest>

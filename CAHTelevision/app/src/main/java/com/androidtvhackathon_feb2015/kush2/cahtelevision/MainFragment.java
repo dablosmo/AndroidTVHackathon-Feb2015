@@ -56,7 +56,7 @@ public class MainFragment extends BrowseFragment {
     private static final int BACKGROUND_UPDATE_DELAY = 300;
     private static final int GRID_ITEM_WIDTH = 200;
     private static final int GRID_ITEM_HEIGHT = 200;
-    private static final int NUM_ROWS = 6;
+    private static final int NUM_ROWS = 1;
     private static final int NUM_COLS = 15;
 
     private ArrayObjectAdapter mRowsAdapter;
@@ -111,12 +111,12 @@ public class MainFragment extends BrowseFragment {
             mRowsAdapter.add(new ListRow(header, listRowAdapter));
         }
 
-        HeaderItem gridHeader = new HeaderItem(i, "PREFERENCES", null);
+        HeaderItem gridHeader = new HeaderItem(i, "Players", null);
 
         GridItemPresenter mGridPresenter = new GridItemPresenter();
         ArrayObjectAdapter gridRowAdapter = new ArrayObjectAdapter(mGridPresenter);
-        gridRowAdapter.add(getResources().getString(R.string.grid_view));
-        gridRowAdapter.add(getString(R.string.error_fragment));
+        //gridRowAdapter.add(getResources().getString(R.string.grid_view));
+        //gridRowAdapter.add(getString(R.string.error_fragment));
         gridRowAdapter.add(getResources().getString(R.string.personal_settings));
         mRowsAdapter.add(new ListRow(gridHeader, gridRowAdapter));
 

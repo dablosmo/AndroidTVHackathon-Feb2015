@@ -84,6 +84,12 @@ public class BluetoothService extends Service
 	    {
 	    	mClient = new BluetoothClient(clientHandler);
 	    }
+	    PlayerMessage msg = PlayerMessage.newBuilder()
+				.setMName("David")
+				.setMAction(1)
+				.build();
+	    System.out.println("Sending Data");
+		BluetoothService.sendMessage(msg);
 	}
 	
 	private void readResponse(PlayerMessage msg)

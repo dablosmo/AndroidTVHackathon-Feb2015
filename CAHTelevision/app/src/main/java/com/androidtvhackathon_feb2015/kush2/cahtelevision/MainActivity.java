@@ -29,6 +29,7 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         System.out.println("Hello World");
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
+        setContentView(R.layout.menu);
     }
 }
