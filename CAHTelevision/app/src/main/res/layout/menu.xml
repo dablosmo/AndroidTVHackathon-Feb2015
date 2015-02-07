@@ -18,5 +18,23 @@
             android:id="@+id/imageView"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/madlipstvlogo" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="START"
+                android:textStyle="bold"
+                android:id="@+id/startButton"
+                android:layout_gravity="center_horizontal"
+                android:onClick="launchAddUsers"
+                android:clickable="true"/>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90d96904-cbc8-4489-9d2d-07d02ead4b34" name="Default" comment="" />
+    <list default="true" id="90d96904-cbc8-4489-9d2d-07d02ead4b34" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CAHPhone/res/layout/cards_fragment.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CAHPhone/res/values/colors.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CAHPhone/res/layout/phone_activity.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CAHPhone/res/layout/phone_white_item.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CAHPhone/AndroidManifest.xml" afterPath="$PROJECT_DIR$/CAHPhone/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CAHPhone/src/com/sdkcdg/bluetooth/BluetoothService.java" afterPath="$PROJECT_DIR$/CAHPhone/src/com/sdkcdg/bluetooth/BluetoothService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CAHPhone/src/com/sdkcdg/cahphone/MainActivity.java" afterPath="$PROJECT_DIR$/CAHPhone/src/com/sdkcdg/cahphone/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CAHPhone/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/CAHPhone/res/layout/activity_main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CAHPhone/res/values/strings.xml" afterPath="$PROJECT_DIR$/CAHPhone/res/values/strings.xml" />
+    </list>
     <ignored path="AndroidTVHackathon-Feb2015.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,8 +36,8 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CAHPhone/src/com/sdkcdg/cahphone/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="465">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="780">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -463,8 +473,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CAHPhone/src/com/sdkcdg/cahphone/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="465">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="780">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
         </state>
       </provider>
