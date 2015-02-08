@@ -14,6 +14,7 @@ public class PlayerUtils
 	public static List<CardsMessage> mHand = new ArrayList<CardsMessage>();
 	public static CardsMessage selectedCards = null;
 	public static String mName = "";
+	public static int mCounter = 0;
 	
 	public static void addCard(PlayerMessage p)
 	{
@@ -33,7 +34,7 @@ public class PlayerUtils
 		if(selectedCards == null)
 		{
 			selectedCards = mHand.get(0);
-			mHand.remove(0);
+			//mHand.remove(0);
 		}
 		PlayerMessage msg = PlayerMessage.newBuilder()
 				.setMName(mName)
@@ -46,20 +47,7 @@ public class PlayerUtils
 	
 	public static void selectCards(int card)
 	{
-		if(selectedCards == null)
-		{
-			selectedCards = mHand.get(card);
-			mHand.remove(card);
-		}
-		else
-		{
-			CardsMessage card2 = mHand.get(card);
-			selectedCards = CardsMessage.newBuilder()
-					.setFirstCard(selectedCards.getFirstCard())
-					.setSecondCard(card2.getFirstCard())
-					.build();
-			mHand.remove(card);
-		}
+		selectedCards = mHand.get(card);
 	}
 	
 	public static void setBlackCard(PlayerMessage pm)
