@@ -97,6 +97,11 @@ public class BluetoothService extends Service
 		int mCommand = msg.getMAction();
 		switch(mCommand)
 		{
+			case PlayerCommands.SET_BLACK_CARD:
+			{
+				PlayerUtils.setBlackCard(msg);
+				break;
+			}
 			case PlayerCommands.PLAY_CARD:
 			{
 				PlayerUtils.sendCardToServer();

@@ -14,11 +14,12 @@
 
 package com.androidtvhackathon_feb2015.kush2.cahtelevision;
 
+import com.service.DealerService;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 import android.widget.TextView;
-
 /*
  * MainActivity class that loads MainFragment
  */
@@ -30,6 +31,12 @@ public class MainActivity extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        //Starting DealerService
+        System.out.println("starting service");
+        Toast.makeText(getApplicationContext(), "starting service", Toast.LENGTH_SHORT).show();
+        Intent serviceIntent = new Intent(getApplicationContext(), DealerService.class);
+        startService(serviceIntent);
+        
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Intent myIntent = new Intent(this, Menu.class);

@@ -2,8 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.androidtvhackathon_feb2015.kush2.cahtelevision" >
 
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
 
     <uses-feature
         android:name="android.hardware.touchscreen"
@@ -34,7 +36,17 @@
         <activity android:name=".DetailsActivity" />
         <activity android:name=".PlaybackOverlayActivity" />
         <activity android:name=".BrowseErrorActivity" />
+<<<<<<< HEAD
 
+=======
+        <service
+            android:name="com.service.DealerService"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="dealer_service" />
+            </intent-filter>
+        </service>
+>>>>>>> 67db5fda27febe8ffc3ad0b676693f4aebf2ce63
     </application>
 
 </manifest>

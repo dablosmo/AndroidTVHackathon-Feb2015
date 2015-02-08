@@ -14,6 +14,7 @@ public class PlayerUtils
 	public static List<CardsMessage> mHand = new ArrayList<CardsMessage>();
 	public static CardsMessage selectedCards = null;
 	public static String mName = "";
+	public static int mCounter = 0;
 	
 	public static void addCard(PlayerMessage p)
 	{
@@ -33,7 +34,7 @@ public class PlayerUtils
 		if(selectedCards == null)
 		{
 			selectedCards = mHand.get(0);
-			mHand.remove(0);
+			//mHand.remove(0);
 		}
 		PlayerMessage msg = PlayerMessage.newBuilder()
 				.setMName(mName)
@@ -44,22 +45,23 @@ public class PlayerUtils
 		selectedCards = null;
 	}
 	
-	public void selectCards(int card)
+	public static void selectCards(int card)
 	{
-		if(selectedCards == null)
+		selectedCards = mHand.get(card);
+	}
+	
+	public static void setBlackCard(PlayerMessage pm)
+	{
+		try 
 		{
-			selectedCards = mHand.get(card);
-			mHand.remove(card);
-		}
-		else
+			CardsMessage cm = CardsMessage.parseFrom(pm.getMessageByteString());
+			MainActivity.blackCardTV.setText(cm.getFirstCard());
+		} 
+		catch (InvalidProtocolBufferException e) 
 		{
-			CardsMessage card2 = mHand.get(card);
-			selectedCards = CardsMessage.newBuilder()
-					.setFirstCard(selectedCards.getFirstCard())
-					.setSecondCard(card2.getFirstCard())
-					.build();
-			mHand.remove(card);
-		}
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
 	}
 	
 }
