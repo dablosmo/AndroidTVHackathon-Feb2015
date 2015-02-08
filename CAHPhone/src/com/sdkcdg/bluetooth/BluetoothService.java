@@ -1,4 +1,4 @@
-package com.sdkcdg.cahphone;
+package com.sdkcdg.bluetooth;
 
 import android.app.Service;
 import android.bluetooth.BluetoothAdapter;
@@ -10,9 +10,8 @@ import android.os.Message;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.sdkcdg.bluetooth.BluetoothClient;
-import com.sdkcdg.bluetooth.BluetoothServer;
-import com.sdkcdg.bluetooth.MessageType;
+import com.sdkcdg.cahphone.PlayerUtils;
+import com.sdkcdg.proto.PlayerCommands;
 import com.sdkcdg.proto.PlayerProto.PlayerMessage;
 
 public class BluetoothService extends Service
@@ -29,7 +28,7 @@ public class BluetoothService extends Service
 	public void onCreate()
 	{
 		mAdapter = BluetoothAdapter.getDefaultAdapter();
-		//mTv = mAdapter.getRemoteDevice(address);
+		mTv = mAdapter.getRemoteDevice("F8:8F:CA:22:28:77");
 		serverHandler = new Handler() 
 		{
 	        @Override
@@ -85,6 +84,12 @@ public class BluetoothService extends Service
 	    {
 	    	mClient = new BluetoothClient(clientHandler);
 	    }
+	    PlayerMessage msg = PlayerMessage.newBuilder()
+				.setMName("David")
+				.setMAction(1)
+				.build();
+	    System.out.println("Sending Data");
+		BluetoothService.sendMessage(msg);
 	}
 	
 	private void readResponse(PlayerMessage msg)
@@ -92,6 +97,21 @@ public class BluetoothService extends Service
 		int mCommand = msg.getMAction();
 		switch(mCommand)
 		{
+			case PlayerCommands.SET_BLACK_CARD:
+			{
+				PlayerUtils.setBlackCard(msg);
+				break;
+			}
+			case PlayerCommands.PLAY_CARD:
+			{
+				PlayerUtils.sendCardToServer();
+				break;
+			}
+			case PlayerCommands.RECEIVE_CARD:
+			{
+				PlayerUtils.addCard(msg);
+				break;
+			}
 			default:
 				break;
 		}

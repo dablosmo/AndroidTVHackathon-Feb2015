@@ -19,7 +19,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
-
+import android.widget.TextView;
 /*
  * MainActivity class that loads MainFragment
  */
@@ -27,10 +27,13 @@ public class MainActivity extends Activity {
     /**
      * Called when the activity is first created.
      */
+    private TextView startButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
+        setContentView(R.layout.menu);
+
     }
 }
