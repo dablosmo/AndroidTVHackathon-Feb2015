@@ -43,6 +43,14 @@
                 android:layout_gravity="center_horizontal" />
         </LinearLayout>
 
+        <TextView
+            android:layout_width="500sp"
+            android:layout_height="100sp"
+            android:background="@color/white"
+            android:layout_marginTop="20sp"
+            android:id="@+id/answerField"
+            android:layout_gravity="center_horizontal" />
+
 
     </LinearLayout>
 </LinearLayout>

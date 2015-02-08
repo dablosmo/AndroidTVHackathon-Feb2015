@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.View;
 
@@ -16,6 +17,7 @@ import android.view.View;
 public class Menu extends Activity{
 
     public TextView startButton;
+    public TextView answer;
     Dpad mDpad = new Dpad();
 
     @Override
@@ -30,7 +32,10 @@ public class Menu extends Activity{
     }
 
     public void setUpUIElements()
-    { startButton = (TextView)findViewById(R.id.startButton); }
+    {
+        startButton = (TextView)findViewById(R.id.startButton);
+        answer = (TextView)findViewById(R.id.answerField);
+    }
 
     public boolean onGenericMotionEvent(MotionEvent event){
 
@@ -42,6 +47,11 @@ public class Menu extends Activity{
     public void launchIntent(){
         Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
         startActivityForResult(myIntent, 0);
+    }
+
+    public void loadAnwser(String ans)
+    {
+        answer.setText(ans);
     }
 
         // Check if this event is from a joystick movement and process accordingly.
