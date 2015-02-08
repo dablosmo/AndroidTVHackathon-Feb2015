@@ -37,6 +37,8 @@
                 android:layout_width="500dp"
                 android:layout_height="300dp"
                 android:id="@+id/textView22"
+                android:gravity="center"
+                android:textSize="20sp"
                 android:text="After I moved in with my significant other I learned that they had a secret obsession with ______"
                 android:layout_gravity="center_horizontal" />
         </LinearLayout>
