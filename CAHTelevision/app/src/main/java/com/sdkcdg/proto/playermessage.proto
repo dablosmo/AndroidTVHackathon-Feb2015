@@ -1,0 +1,11 @@
+package protofiles;
+
+option java_package = "com.sdkcdg.proto";
+option java_outer_classname = "PlayerProto";
+
+message PlayerMessage 
+{
+	required int32 mAction = 5;
+	required string mName = 2;
+	optional bytes messageByteString = 3;
+}

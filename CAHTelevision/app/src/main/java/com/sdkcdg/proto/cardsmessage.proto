@@ -1,0 +1,10 @@
+package protofiles;
+
+option java_package = "com.sdkcdg.proto";
+option java_outer_classname = "CardsProto";
+
+message CardsMessage 
+{
+	required string FirstCard = 5;
+	optional string SecondCard = 4;
+}
