@@ -12,31 +12,35 @@
         >
 
         <ImageView
-            android:layout_width="400dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:id="@+id/imageView"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/madlipstvlogo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Question"
+            android:id="@+id/textView"
+            android:layout_gravity="center_horizontal" />
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal">
-
+            android:layout_gravity="center_horizontal"
+            android:background="@color/lb_grey">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="START"
-                android:textStyle="bold"
-                android:id="@+id/startButton"
-                android:layout_gravity="center_horizontal"
-              />
-            <ListView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="500dp"
+                android:layout_height="300dp"
+                android:id="@+id/textView22"
+                android:text="After I moved in with my significant other I learned that they had a secret obsession with ______"
+                android:layout_gravity="center_horizontal" />
         </LinearLayout>
+
+
     </LinearLayout>
 </LinearLayout>
