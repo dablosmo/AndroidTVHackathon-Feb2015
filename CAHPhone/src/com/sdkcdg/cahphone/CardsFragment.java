@@ -1,7 +1,5 @@
 package com.sdkcdg.cahphone;
 
-import java.util.ArrayList;
-
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,51 +10,31 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.cahphone.R;
-import com.sdkcdg.proto.CardsProto.CardsMessage;
 
 /**
  * Created by schhan on 2/7/15.
  */
 public class CardsFragment extends Fragment {
 
-	private ArrayList<String> mCards;
-
-	private int mCounter = 0;
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-
-		CardsMessage c0 = CardsMessage.newBuilder().setFirstCard("1").build();
-		CardsMessage c1 = CardsMessage.newBuilder().setFirstCard("2").build();
-		CardsMessage c2 = CardsMessage.newBuilder().setFirstCard("3").build();
-
-		PlayerUtils.mHand.add(c0);
-		PlayerUtils.mHand.add(c1);
-		PlayerUtils.mHand.add(c2);
+		super.onCreate(savedInstanceState);		
 	}
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup parent,
-			Bundle savedInstanceState) {
+	public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
 
 		View v = inflater.inflate(R.layout.cards_fragment, parent, false);
 		
 		final TextView card = (TextView) v.findViewById(R.id.tv_card);
-		
-		card.setOnClickListener(new OnClickListener() {
+		card.setText(PlayerUtils.mHand.get(PlayerUtils.mCounter).getFirstCard());
+		card.setOnClickListener(new OnClickListener() 
+		{
 			
 			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				
-				if(mCounter >= 0 && mCounter < PlayerUtils.mHand.size()) {
-					
-					PlayerUtils.selectCards(mCounter);
-					
-				}
-				
-				
+			public void onClick(View v) 
+			{
+				PlayerUtils.selectCards(PlayerUtils.mCounter);
 			}
 		});
 
@@ -64,19 +42,12 @@ public class CardsFragment extends Fragment {
 		next.setOnClickListener(new OnClickListener() {
 
 			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				
-				if(mCounter < PlayerUtils.mHand.size()){
-				
-					card.setText(PlayerUtils.mHand.get(mCounter).getFirstCard());
-					
-					mCounter += 1;
-					
-				} else {
-					mCounter = PlayerUtils.mHand.size() - 1;
-					
-					card.setText(PlayerUtils.mHand.get(mCounter).getFirstCard());
+			public void onClick(View v) 
+			{
+				if(PlayerUtils.mCounter < PlayerUtils.mHand.size()-1)
+				{
+					PlayerUtils.mCounter++;
+					card.setText(PlayerUtils.mHand.get(PlayerUtils.mCounter).getFirstCard());
 				}
 			}
 		});
@@ -86,22 +57,10 @@ public class CardsFragment extends Fragment {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				
-				mCounter -= 1;
-
-				if(mCounter >= 0) {
-					
-					card.setText(PlayerUtils.mHand.get(mCounter).getFirstCard());
-					
-					mCounter -= 1;
-					
-				} else {
-					
-					mCounter = 0;
-					
-					card.setText(PlayerUtils.mHand.get(mCounter).getFirstCard());
-					
+				if(PlayerUtils.mCounter > 0 )
+				{
+					PlayerUtils.mCounter--;
+					card.setText(PlayerUtils.mHand.get(PlayerUtils.mCounter).getFirstCard());
 				}
 			}
 		});

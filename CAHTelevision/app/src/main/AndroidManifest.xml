@@ -31,21 +31,14 @@
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Menu"
-            android:icon="@drawable/app_icon_your_company"
-            android:label="@string/app_name"
-            android:logo="@drawable/app_icon_your_company"
-            android:screenOrientation="landscape" >
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".Menu"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".DetailsActivity" />
         <activity android:name=".PlaybackOverlayActivity" />
         <activity android:name=".BrowseErrorActivity" />
+<<<<<<< HEAD
+
+=======
         <service
             android:name="com.service.DealerService"
             android:exported="true" >
@@ -53,6 +46,7 @@
                 <action android:name="dealer_service" />
             </intent-filter>
         </service>
+>>>>>>> 67db5fda27febe8ffc3ad0b676693f4aebf2ce63
     </application>
 
 </manifest>

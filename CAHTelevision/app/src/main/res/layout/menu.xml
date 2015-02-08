@@ -12,29 +12,45 @@
         >
 
         <ImageView
-            android:layout_width="400dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:id="@+id/imageView"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/madlipstvlogo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Question"
+            android:id="@+id/textView"
+            android:layout_gravity="center_horizontal" />
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal">
-
+            android:layout_gravity="center_horizontal"
+            android:background="@color/lb_grey">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="START"
-                android:textStyle="bold"
-                android:id="@+id/startButton"
-                android:layout_gravity="center_horizontal"
-                android:onClick="launchAddUsers"
-                android:clickable="true"/>
+                android:layout_width="500dp"
+                android:layout_height="300dp"
+                android:id="@+id/textView22"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:text="After I moved in with my significant other I learned that they had a secret obsession with ______"
+                android:layout_gravity="center_horizontal" />
         </LinearLayout>
+
+        <TextView
+            android:layout_width="500sp"
+            android:layout_height="100sp"
+            android:background="@color/white"
+            android:layout_marginTop="20sp"
+            android:id="@+id/answerField"
+            android:layout_gravity="center_horizontal" />
+
+
     </LinearLayout>
 </LinearLayout>

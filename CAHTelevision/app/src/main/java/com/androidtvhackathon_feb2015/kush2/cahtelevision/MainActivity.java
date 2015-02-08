@@ -31,6 +31,7 @@ public class MainActivity extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         //Starting DealerService
         System.out.println("starting service");
         Toast.makeText(getApplicationContext(), "starting service", Toast.LENGTH_SHORT).show();
@@ -38,8 +39,10 @@ public class MainActivity extends Activity {
         startService(serviceIntent);
 
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
-        setContentView(R.layout.menu);
+        setContentView(R.layout.activity_main);
+        Intent myIntent = new Intent(this, Menu.class);
+        startActivity(myIntent);
+        //setContentView(R.layout.menu);
 
     }
 }

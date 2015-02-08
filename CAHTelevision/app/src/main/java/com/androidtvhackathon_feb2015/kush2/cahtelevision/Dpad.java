@@ -15,7 +15,7 @@ import android.view.MotionEvent;
         final static int RIGHT    = 2;
         final static int DOWN     = 3;
         final static int CENTER   = 4;
-        final static int ABUTTON = 5;
+        final static int ABUTTON = 29;
 
         int directionPressed = -1; // initialized to -1
         int buttonPressed = -1;
