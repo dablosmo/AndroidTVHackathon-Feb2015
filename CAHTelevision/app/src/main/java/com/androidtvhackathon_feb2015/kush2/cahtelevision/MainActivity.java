@@ -15,6 +15,7 @@
 package com.androidtvhackathon_feb2015.kush2.cahtelevision;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -30,8 +31,10 @@ public class MainActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
-        setContentView(R.layout.menu);
+        setContentView(R.layout.activity_main);
+        Intent myIntent = new Intent(this, Menu.class);
+        startActivity(myIntent);
+        //setContentView(R.layout.menu);
 
     }
 }

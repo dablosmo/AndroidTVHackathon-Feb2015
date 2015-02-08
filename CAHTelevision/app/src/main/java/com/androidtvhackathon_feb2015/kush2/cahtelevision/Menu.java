@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.widget.TextView;
 
@@ -19,11 +20,10 @@ public class Menu extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
         setContentView(R.layout.menu);
+        Intent intent= getIntent();
         setUpUIElements();
-
-
     }
 
     public void setUpUIElements()
@@ -33,7 +33,6 @@ public class Menu extends Activity {
         Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
         startActivityForResult(myIntent, 0);
     }
-
 
         // Check if this event is from a joystick movement and process accordingly.
         @Override
