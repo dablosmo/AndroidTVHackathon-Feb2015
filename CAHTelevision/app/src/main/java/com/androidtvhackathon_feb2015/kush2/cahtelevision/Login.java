@@ -14,7 +14,7 @@ public class Login extends Activity {
 
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);
-        setContentView(R.layout.login);
+
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
                 LayoutParams.MATCH_PARENT));
