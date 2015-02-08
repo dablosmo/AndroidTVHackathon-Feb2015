@@ -4,23 +4,24 @@ import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
-
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.cahphone.R;
 import com.sdkcdg.bluetooth.BluetoothService;
-import com.sdkcdg.proto.PlayerProto.PlayerMessage;
 
 
 public class MainActivity extends Activity {
 
+	public static TextView blackCardTV;
     @Override
     protected void onCreate(Bundle savedInstanceState) 
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.phone_activity);
+        blackCardTV = (TextView) findViewById(R.id.tv_phone_topic);
         
 //        CardsFragment cm = new CardsFragment();
         

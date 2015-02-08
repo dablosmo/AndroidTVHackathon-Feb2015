@@ -62,4 +62,18 @@ public class PlayerUtils
 		}
 	}
 	
+	public static void setBlackCard(PlayerMessage pm)
+	{
+		try 
+		{
+			CardsMessage cm = CardsMessage.parseFrom(pm.getMessageByteString());
+			MainActivity.blackCardTV.setText(cm.getFirstCard());
+		} 
+		catch (InvalidProtocolBufferException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+	}
+	
 }
