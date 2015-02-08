@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
         Toast.makeText(getApplicationContext(), "starting service", Toast.LENGTH_SHORT).show();
         Intent serviceIntent = new Intent(getApplicationContext(), DealerService.class);
         startService(serviceIntent);
-        
+
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);
         setContentView(R.layout.menu);

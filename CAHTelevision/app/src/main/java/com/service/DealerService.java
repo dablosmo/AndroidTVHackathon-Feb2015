@@ -52,9 +52,9 @@ public class DealerService extends Service
 	{
         System.out.println("Service successfully started.");
 		mAdapter = BluetoothAdapter.getDefaultAdapter();
-        mAdapter.getRemoteDevice("40:78:6A:52:89:BB").createBond();
-        mAdapter.getRemoteDevice("E4:12:1D:8B:8F:B5").createBond();
-	    mTv = null;//mAdapter.getRemoteDevice(address);
+        //mAdapter.getRemoteDevice("40:78:6A:52:89:BB").createBond();
+        //mAdapter.getRemoteDevice("E4:12:1D:8B:8F:B5").createBond();
+	    mTv = mAdapter.getRemoteDevice("40:78:6A:52:89:BB");
 		serverHandler = new Handler() 
 		{
 	        @Override
@@ -111,18 +111,18 @@ public class DealerService extends Service
 	    	mClient = new BluetoothClient(clientHandler);
 	    }
 
-        setBlackCard(BlackCard1, "David");
+        //setBlackCard(BlackCard1, "David");
         setBlackCard(BlackCard1, "Garland");
-        sendCard(WhiteCard1, "David");
-        sendCard(WhiteCard2, "David");
-        sendCard(WhiteCard3, "David");
-        sendCard(WhiteCard4, "David");
-        sendCard(WhiteCard5, "David");
-        sendCard(WhiteCard6, "Garland");
-        sendCard(WhiteCard7, "Garland");
-        sendCard(WhiteCard8, "Garland");
-        sendCard(WhiteCard9, "Garland");
-        sendCard(WhiteCard10, "Garland");
+//        sendCard(WhiteCard1, "David");
+//        sendCard(WhiteCard2, "David");
+//        sendCard(WhiteCard3, "David");
+//        sendCard(WhiteCard4, "David");
+//        sendCard(WhiteCard5, "David");
+//        sendCard(WhiteCard6, "Garland");
+//        sendCard(WhiteCard7, "Garland");
+//        sendCard(WhiteCard8, "Garland");
+//        sendCard(WhiteCard9, "Garland");
+//        sendCard(WhiteCard10, "Garland");
 	}
 	
 	private void readResponse(PlayerMessage msg)
@@ -132,24 +132,17 @@ public class DealerService extends Service
 		{
 			case PlayerCommands.PLAY_CARD: {
                 Toast.makeText(getApplicationContext(), "Play Card Recieved", Toast.LENGTH_SHORT).show();
-                Log.d(TAG, "Play Card Recieved");
-                PlayerMessage playerMessage = null;
-                try {
-                    playerMessage = PlayerMessage.parseFrom(msg.getMessageByteString());
-                } catch (InvalidProtocolBufferException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
 
                 CardsMessage cardsMessage = null;
                 try {
-                    CardsMessage.parseFrom(playerMessage.getMessageByteString());
+                    cardsMessage = CardsMessage.parseFrom(msg.getMessageByteString());
+
                 } catch (InvalidProtocolBufferException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
 
-                String cardMessage = cardsMessage.getFirstCard();
+                Toast.makeText(getApplicationContext(), cardsMessage.getFirstCard(), Toast.LENGTH_SHORT).show();
 
                 break;
             }
@@ -166,7 +159,7 @@ public class DealerService extends Service
 
         PlayerMessage playerMsg = PlayerMessage.newBuilder()
                 .setMName(PlayerName)
-                .setMAction(2)
+                .setMAction(3)
                 .setMessageByteString(cardMsg.toByteString())
                 .build();
 
@@ -180,7 +173,7 @@ public class DealerService extends Service
 
         PlayerMessage playerMsg = PlayerMessage.newBuilder()
                 .setMName(PlayerName)
-                .setMAction(1)
+                .setMAction(2)
                 .setMessageByteString(cardMsg.toByteString())
                 .build();
 
@@ -197,11 +190,8 @@ public class DealerService extends Service
     		mServer.start();
     	}
 
-        if(Name.equals("David")) {
-            mTv = mAdapter.getRemoteDevice("E4:12:1D:8B:8F:B5");
-        } else {
-            mTv = mAdapter.getRemoteDevice("40:78:6A:52:89:BB");
-        }
+        mTv = mAdapter.getRemoteDevice("40:78:6A:52:89:BB");
+
 		
 		byte[] outbuffer = msg.toByteArray();
 		mClient.send(outbuffer, mTv);
